@@ -13,28 +13,32 @@ const showSlides = () =>{
 };
 showSlides ();
 
-const newsDisplay = document.querySelector ('#news-display');
-    const division = document.createElement ('div')
-    division.classList = 'news';
-    newsDisplay.appendChild (division)
-    
+
+const newarray = [];
 const URL = " https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
 fetch (URL)
     .then (function (data){
-      console.log (data);
       return data.json();
     })
     .then (function (storyIds){
-        console.log (storyIds);
-        for (const id of storyIds){
+        const fivestories = storyIds.slice (1, 6);
+        newarray.push (fivestories);
+        for (const id of fivestories){
             const itemIdUrl = 'https://hacker-news.firebaseio.com/v0/item/' + id + '.json?print=pretty';
             fetch (itemIdUrl)
               .then (function (data){
                 return data.json ();
             })
               .then (function (response){
-                  console.log (response);
-                  newsDisplay.innerText = response.title;
-              })
+                for (const newarr of newarray){
+                    const newsDisplay = document.querySelector ('#news-display');
+                     const divisiontitle = document.createElement ('div');
+                     divisiontitle.classList = 'news-title';
+                     newsDisplay.appendChild (divisiontitle);
+                      divisiontitle.innerText = response.title;
+
+                }
+            })
+
         }
     })

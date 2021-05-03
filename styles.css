@@ -111,3 +111,14 @@ z-index: 1;
     width: 100px;
 }
 
+#news-display{
+    display: flex;
+    flex-wrap: wrap;
+    widht:100vw;
+    height: 800px;
+}
+.news-title {
+   background-color: lightgray;
+   width: 470px;
+   height: 200px;
+}
