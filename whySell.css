@@ -1,0 +1,18 @@
+#heading {
+    background: grey;
+    display: flex;
+    justify-content: flex-end;
+    height: 62px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+
+#paragraph {
+    display:flex
+
+}
+#content{
+    width: 600px;
+}
